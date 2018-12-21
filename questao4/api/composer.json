@@ -1,0 +1,15 @@
+{
+  "name": "tschons/icarus",
+  "description": "Projeto teste",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tiago dos Santos Schons",
+      "email": "tgschons@gmail.com"
+    }
+  ],
+  "require": {
+    "slim/slim": "~2.0"
+  }
+}

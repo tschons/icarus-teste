@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    Formulário de tarefa
+  </div>
+  <div class="card-body">
+    <div class="alert alert-success" [hidden]="successMessage == ''" role="alert">
+      {{successMessage}}
+    </div>
+    <div class="alert alert-danger" [hidden]="errorMessage == ''" role="alert">
+      {{errorMessage}}
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-10 form-group">
+          <label for="titulo">Título*:</label>
+          <input type="text" id="titulo" name="titulo" [(ngModel)]="tarefa.titulo" class="form-control" />
+        </div>
+        <div class="col-md-2 form-group">
+          <label for="prioridade">Prioridade*:</label>
+          <select id="prioridade" name="prioridade" [(ngModel)]="tarefa.prioridade" class="form-control">
+            <option *ngFor="let prioridade of prioridades" value="{{prioridade.id}}">{{prioridade.nome}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição*:</label>
+        <textarea id="descricao" name="descricao" [(ngModel)]="tarefa.descricao" class="form-control">
+        </textarea>
+      </div>
+      <div>
+        <small>* Campos obrigatórios</small>
+      </div>
+      <div class="form-group text-center">
+        <button [hidden]="!tarefa.id" class="btn btn-primary" (click)="clearForm()">Novo</button>
+        <button class="btn btn-primary" (click)="save()">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
