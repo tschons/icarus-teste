@@ -29,7 +29,7 @@ final class Model extends AbstractModel
         $queryResult = $this->connDb->query($query);
 
         $rows = array();
-        while($row = $queryResult->fetch_assoc()) {
+        while ($row = $queryResult->fetch_assoc()) {
             $rows[] = $row;
         }
 

@@ -10,9 +10,9 @@ final class Configuration
 
     private static function loadConf()
     {
-        try{
+        try {
             self::$data = parse_ini_file(self::$confFile);
-        }catch (\Exception $error) {
+        } catch (\Exception $error) {
             die('Falha ao carregar arquivo de configurações: ' . $error->getMessage());
         }
 
@@ -20,7 +20,7 @@ final class Configuration
 
     public static function getConfiguration($configuration)
     {
-        if(is_null(self::$data)) {
+        if (is_null(self::$data)) {
             self::loadConf();
         }
 

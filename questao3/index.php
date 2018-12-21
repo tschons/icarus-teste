@@ -7,9 +7,9 @@ final class Configuration
 
     private static function loadConf()
     {
-        try{
+        try {
             self::$data = parse_ini_file(self::$confFile);
-        }catch (Exception $error) {
+        } catch (Exception $error) {
             die('Falha ao carregar arquivo de configurações: ' . $error->getMessage());
         }
 
@@ -17,7 +17,7 @@ final class Configuration
 
     public static function getConf($configuration)
     {
-        if(is_null(self::$data)) {
+        if (is_null(self::$data)) {
             self::loadConf();
         }
 
@@ -30,7 +30,7 @@ final class DatabaseConnection
     private static $conn;
 
     private function __construct() {
-        try{
+        try {
 
             self::$conn = new \mysqli(
                 Configuration::getConf('host'),
@@ -39,13 +39,14 @@ final class DatabaseConnection
                 Configuration::getConf('db-name')
             );
 
-        }catch(Exception $error) {
+        } catch(Exception $error) {
             die('Falha ao conectar-se ao banco de dados: ' . $error->getMessage());
         }
     }
 
     // Design Pattern Singleton
-    public static function getConnection() {
+    public static function getConnection()
+    {
 
         if (!isset(self::$conn)) {
             new DatabaseConnection();

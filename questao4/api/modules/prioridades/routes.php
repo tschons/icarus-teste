@@ -25,4 +25,3 @@ $app->get('/prioridades', function () use ($app, $controller) {
     $app->response->headers->set('Content-Type', 'application/json');
 
 });
-

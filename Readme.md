@@ -6,6 +6,7 @@
 - Bootstrap 4.1.3
 - Slim 2.0
 - npm 6.4.1
+- Composer 1.8.0
 
 #### **Configurações**
 **Back-end**
@@ -40,8 +41,10 @@ ativo e o diretório no qual a API está rodando tenha as permissões para execu
 
 #### **Passos para execução**
 
-1. Extrair arquivo de dump da base de dados;
+1. Importar arquivo de dump da base de dados;
 2. Alterar arquivo de configuração da API com os dados para acesso à base;
 3. Checar módulo mod_rewrite e arquivo de configuração do apache com permissões para .htaccess no diretório da API;
-4. Alterar arquivo de configuração do front-end especificando a URL da API;
-5. Iniciar o front-end rodando o comando `ng serve --open`.
+4. Executar o comando `composer install` para instalar as dependências do back-end;
+5. Alterar arquivo de configuração do front-end especificando a URL da API;
+6. Executar o comando `npm install` para instalar as dependências do front-end;
+7. Iniciar o front-end rodando o comando `ng serve --open`.
